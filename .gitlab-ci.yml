@@ -7,6 +7,6 @@ maven_build:
   script:
     - "mvn clean test-compile"
   tags:
-    -java
-    -maven
+    - java
+    - maven
   
