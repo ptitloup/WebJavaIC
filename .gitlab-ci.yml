@@ -6,3 +6,6 @@ maven_build:
   environment: staging
   script:
   - "mvn clean test-compile"
+  tags:
+  -java
+  -maven
