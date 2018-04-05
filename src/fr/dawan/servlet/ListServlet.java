@@ -37,7 +37,7 @@ public class ListServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-	        throws ServletException, IOException {
+			throws ServletException, IOException {
 
 		List<Stagiaire> resultat;
 		try {
@@ -52,11 +52,13 @@ public class ListServlet extends HttpServlet {
 			// request.getRequestDispatcher("liste.jsp").forward(request,
 			// response);
 			response.sendRedirect("liste.jsp");
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			response.sendError(500, e.getMessage());
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			response.sendError(500, e.getMessage());
 		}
 	}
-
 
 }
