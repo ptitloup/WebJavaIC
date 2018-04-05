@@ -8,14 +8,14 @@ pipeline {
             sh 'mvn -Dmaven.test.failure.ignore clean site:site'
           }
         }
-        stage('') {
+        stage('Dodo') {
           steps {
-            sleep 5
+            sleep 100
           }
         }
       }
     }
-    stage('Résultat') {
+    stage('Resultat') {
       steps {
         echo 'Fini le pippeline !!'
       }
