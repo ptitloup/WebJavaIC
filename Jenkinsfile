@@ -1,17 +1,16 @@
 pipeline {
   agent any
-  tool {
-    maven 'M3'
-    jdk 'Java8'
-  }
   stages {
     stage('Preparation') {
       parallel {
         stage('Preparation') {
           steps {
-            if(isunix()) {
+            if (isUnix()) {
               sh 'mvn -Dmaven.test.failure.ignore clean site:site'
-            } 
+            } else {
+              bat(/mvn -Dmaven.test.failure.ignore clean site:site/)
+            }
+            
           }
         }
         stage('Dodo') {
