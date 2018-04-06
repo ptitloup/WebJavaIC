@@ -1,5 +1,9 @@
 pipeline {
   agent any
+  tools { 
+        maven 'M3' 
+        jdk 'JDK8' 
+    }
   stages {
     stage('Preparation') {
       parallel {
@@ -10,9 +14,14 @@ pipeline {
         }
         stage('Dodo') {
           steps {
-            sleep 100
+            sleep 40
           }
         }
+      }
+    }
+    stage('Build') {
+      steps {
+        echo 'Construction'
       }
     }
     stage('Resultat') {
